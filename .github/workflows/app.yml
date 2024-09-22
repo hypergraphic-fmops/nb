@@ -1,0 +1,102 @@
+name: Fluxo de Trabalho de Análise de Código e Refatoração
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+  workflow_dispatch:
+
+jobs:
+  coleta_de_dados:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Coleta de Dados (Códigos Python de Graduandos)
+        # Implemente a lógica para coletar os códigos Python dos graduandos
+        # Exemplo: Clonar repositórios, baixar arquivos, etc.
+        run: echo "Implementar coleta de dados aqui"
+
+  pre_processamento:
+    runs-on: ubuntu-latest
+    needs: coleta_de_dados
+    steps:
+      - name: Pré-processamento de Código
+        # Implemente a lógica para pré-processar o código
+        # Exemplo: Limpeza, formatação, etc.
+        run: echo "Implementar pré-processamento aqui"
+
+  analise_com_llm:
+    runs-on: ubuntu-latest
+    needs: pre_processamento
+    steps:
+      - name: Análise de Código com LLM (Identificação de Erros e Complexidade)
+        # Implemente a lógica para analisar o código com LLMs
+        # Exemplo: Chamar APIs de LLMs, analisar a saída, etc.
+        run: echo "Implementar análise com LLMs aqui"
+
+  extracao_de_metricas:
+    runs-on: ubuntu-latest
+    needs: analise_com_llm
+    steps:
+      - name: Extração de Métricas de Código (Complexidade Ciclomática e Acoplamento)
+        # Implemente a lógica para extrair métricas de código
+        # Exemplo: Usar bibliotecas como radon ou lizard
+        run: echo "Implementar extração de métricas aqui"
+
+  identificacao_de_padroes:
+    runs-on: ubuntu-latest
+    needs: extracao_de_metricas
+    steps:
+      - name: Identificação de Padrões de Erros e Complexidade
+        # Implemente a lógica para identificar padrões nos dados extraídos
+        run: echo "Implementar identificação de padrões aqui"
+
+  desenvolvimento_de_estrategias:
+    runs-on: ubuntu-latest
+    needs: identificacao_de_padroes
+    steps:
+      - name: Desenvolvimento de Estratégias de Refatoração (com LLMs)
+        # Implemente a lógica para desenvolver estratégias de refatoração
+        # Exemplo: Usar LLMs para sugerir refatorações
+        run: echo "Implementar desenvolvimento de estratégias aqui"
+
+  aplicacao_de_refatoracao:
+    runs-on: ubuntu-latest
+    needs: desenvolvimento_de_estrategias
+    steps:
+      - name: Aplicação de Refatoração em Código
+        # Implemente a lógica para aplicar as refatorações no código
+        run: echo "Implementar aplicação de refatoração aqui"
+
+  avaliacao_da_refatoracao:
+    runs-on: ubuntu-latest
+    needs: aplicacao_de_refatoracao
+    steps:
+      - name: Avaliação da Refatoração (Redução de Complexidade e Acoplamento)
+        # Implemente a lógica para avaliar a efetividade da refatoração
+        run: echo "Implementar avaliação da refatoração aqui"
+
+  feedback_para_graduandos:
+    runs-on: ubuntu-latest
+    needs: avaliacao_da_refatoracao
+    steps:
+      - name: Feedback para Graduandos (com LLMs)
+        # Implemente a lógica para gerar feedback para os graduandos
+        # Exemplo: Usar LLMs para gerar relatórios personalizados
+        run: echo "Implementar feedback para graduandos aqui"
+
+  analise_da_efetividade:
+    runs-on: ubuntu-latest
+    needs: feedback_para_graduandos
+    steps:
+      - name: Análise da Efetividade da Aprendizagem
+        # Implemente a lógica para analisar a efetividade da aprendizagem
+        run: echo "Implementar análise da efetividade aqui"
+
+  publicacao_academica:
+    runs-on: ubuntu-latest
+    needs: analise_da_efetividade
+    steps:
+      - name: Publicação Acadêmica
+        # Implemente a lógica para auxiliar na publicação acadêmica
+        run: echo "Implementar publicação acadêmica aqui"
